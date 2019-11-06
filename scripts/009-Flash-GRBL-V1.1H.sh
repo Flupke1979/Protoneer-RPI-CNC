@@ -1,1 +1,1 @@
-/home/pi/RPI-CNC-Config-Scripts/resources/scripts/Run-Flash-GRBL-Latest.sh
+/home/pi/Protoneer-RPI-CNC/resources/scripts/Run-Flash-GRBL-Latest.sh
