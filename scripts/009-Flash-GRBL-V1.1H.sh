@@ -1,1 +1,1 @@
-/home/pi/arduino-1.8.10/hardware/tools/avr/bin/avrdude -C/home/pi/arduino-1.8.10/hardware/tools/avr/etc/avrdude.conf -v -patmega328p -carduino -P/dev/ttyAMA0 -b115200 -D -Uflash:w:/home/pi/Protoneer-RPI-CNC/resources/firmware/grbl_v1.1h.20190825.hex:i
+/home/pi/RPI-CNC-Config-Scripts/resources/scripts/Run-Flash-GRBL-Latest.sh
