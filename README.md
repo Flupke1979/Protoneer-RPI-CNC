@@ -3,6 +3,9 @@ Scripts used to setup a Raspberry Pi for use with the Raspberry Pi CNC board
 
 * Get latest rpi image and copy to SD card with Balena etcher (https://www.raspberrypi.org/downloads/raspbian/)
 
+Add SSH and WPA supplicant file
+https://learn.adafruit.com/adafruits-raspberry-pi-lesson-3-network-setup/setting-up-wifi-with-occidentalis
+
 * edit "sudo nano /boot/cmdline.txt" remove "Console" settings. (Stops the logging of system messages to the serial port)
 
 * SSH to  RPI,  "sudo raspi-config":
