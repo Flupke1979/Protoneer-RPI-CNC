@@ -7,7 +7,8 @@ pm2 startup  # To start PM2 as pi / current user
   sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u pi --hp /home/pi
 
 # Start CNCjs (on port 8000, /w Tinyweb mount point) with PM2
-pm2 start $(which cncjs) -- --port 8000 -m /tinyweb:/home/pi/tinyweb
+#pm2 start $(which cncjs) -- --port 8000 -m /tinyweb:/home/pi/tinyweb
+pm2 start $(which cncjs) -- --port 8000 -m /tinyweb:/home/pi/tinyweb --watch-directory /home/pi/watch
 
 # Set current running apps to startup
 pm2 save
