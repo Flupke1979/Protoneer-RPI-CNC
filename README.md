@@ -35,6 +35,8 @@ bash ./001-GeneralSetup.sh
 cd Protoneer-RPI-CNC/scripts/
 bash ./002-install-node.sh
 
+Proberen: npm i npm@latest -g
+
 #reboots
 #SSH to Pi
 
