@@ -45,6 +45,7 @@ sudo reboot
 cd Protoneer-RPI-CNC/scripts/
 ./009-Flash-GRBL-V1.1H.sh
 
+Power Off-On
 
 #sudo ./setup
 ```
