@@ -8,8 +8,10 @@ Scripts used to setup a Raspberry Pi for use with the Raspberry Pi CNC board
 * SSH to  RPI,  "sudo raspi-config":
 	* Expand FS first with
 	* Change Timezone
+	* Change Wifi Country
 	* Change Hostname
 	* Change Boot Option: Boot to CLI (No GUI)
+	* Change Wifi Settings
 	* Reboot
 
 * SSH to  RPI
