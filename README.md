@@ -1,7 +1,7 @@
 # RPI-CNC-Config-Scripts
 Scripts used to setup a Raspberry Pi for use with the Raspberry Pi CNC board
 
-* Get latest rpi image and copy to SD card with Balenaetcher(https://www.raspberrypi.org/downloads/raspbian/)
+* Get latest rpi image and copy to SD card with Balena etcher (https://www.raspberrypi.org/downloads/raspbian/)
 
 * edit "sudo nano /boot/cmdline.txt" remove "Console" settings. (Stops the logging of system messages to the serial port)
 
