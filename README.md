@@ -41,10 +41,16 @@ Proberen: npm i npm@latest -g
 #SSH to Pi
 
 cd Protoneer-RPI-CNC/scripts/
+#Arduino enkel voor flashen
 bash ./003-install-Arduino.sh
+#AVRDude files aanpassen autoreset in Arduino map/...
 bash ./004-install-cncjs.sh
 bash ./005-freeSpace.sh
 bash ./006-RPi3-Serial-Config.sh
+
+SAMBA installeren
+.cncr config file maken
+
 
 #reboots
 #SSH to Pi
@@ -59,8 +65,9 @@ sudo reboot
 #reboots
 #SSH to Pi
 
-cd Protoneer-RPI-CNC/scripts/
-bash ./009-Flash-GRBL-V1.1H.sh
+Flash starten vanuit resources/scripts map
+#cd Protoneer-RPI-CNC/scripts/
+#bash ./009-Flash-GRBL-V1.1H.sh
 
 Power Off-On
 
