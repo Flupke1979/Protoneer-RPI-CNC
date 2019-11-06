@@ -33,12 +33,18 @@ cd Protoneer-RPI-CNC/scripts/
 ./005-freeSpace.sh
 ./006-RPi3-Serial-Config.sh
 
+
+
 #To test
 #cd Protoneer-RPI-CNC/scripts/
 #./007-Autostart-cncjs.sh
 #./008-Iptables.sh
 
 sudo reboot
+
+cd Protoneer-RPI-CNC/scripts/
+./009-Flash-GRBL-V1.1H.sh
+
 
 #sudo ./setup
 ```
