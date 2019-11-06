@@ -9,7 +9,7 @@ https://learn.adafruit.com/adafruits-raspberry-pi-lesson-3-network-setup/setting
 * edit "sudo nano /boot/cmdline.txt" remove "Console" settings. (Stops the logging of system messages to the serial port)
 
 * SSH to  RPI,  "sudo raspi-config":
-	* Expand FS first with
+	* Expand FS
 	* Change Timezone
 	* Change Wifi Country
 	* Change Hostname
@@ -53,7 +53,10 @@ bash ./006-RPi3-Serial-Config.sh
 
 SAMBA installeren
 watch map maken in home/pi/
-.cncr config file maken
+.cncr config file maken in home/pi/met:
+sudo nano ~/.cncrc
+Fileinhoud in bijstaande file
+git clone shopfloor
 
 
 #reboots
@@ -61,7 +64,7 @@ watch map maken in home/pi/
 
 #To test
 #cd Protoneer-RPI-CNC/scripts/
-#bash ./007-Autostart-cncjs.sh
+#bash ./007-Autostart-cncjs.sh     shopfloor nog integreren in start commando
 #bash ./008-Iptables.sh
 
 sudo reboot
@@ -74,6 +77,8 @@ Flash starten vanuit resources/scripts map
 #bash ./009-Flash-GRBL-V1.1H.sh
 
 Power Off-On
+
+GRBL setting file laden
 
 #sudo ./setup
 ```
