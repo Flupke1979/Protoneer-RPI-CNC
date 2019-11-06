@@ -21,11 +21,20 @@ git clone https://github.com//Flupke1979/Protoneer-RPI-CNC.git
 cd Protoneer-RPI-CNC/scripts/
 ./000-UpdateClean.sh
 
+#reboots
+#SSH to Pi
+
 cd Protoneer-RPI-CNC/scripts/
 ./001-GeneralSetup.sh
 
+#reboots
+#SSH to Pi
+
 cd Protoneer-RPI-CNC/scripts/
 ./002-install-node.sh
+
+#reboots
+#SSH to Pi
 
 cd Protoneer-RPI-CNC/scripts/
 ./003-install-Arduino.sh
@@ -33,7 +42,8 @@ cd Protoneer-RPI-CNC/scripts/
 ./005-freeSpace.sh
 ./006-RPi3-Serial-Config.sh
 
-
+#reboots
+#SSH to Pi
 
 #To test
 #cd Protoneer-RPI-CNC/scripts/
@@ -41,6 +51,9 @@ cd Protoneer-RPI-CNC/scripts/
 #./008-Iptables.sh
 
 sudo reboot
+
+#reboots
+#SSH to Pi
 
 cd Protoneer-RPI-CNC/scripts/
 ./009-Flash-GRBL-V1.1H.sh
