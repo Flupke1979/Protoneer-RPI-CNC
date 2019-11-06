@@ -18,7 +18,7 @@ Scripts used to setup a Raspberry Pi for use with the Raspberry Pi CNC board
 
 ```
 cd ~
-git clone https://github.com//Flupke1979/Protoneer-RPI-CNC.git
+git clone https://github.com//Flupke1979/Protoneer-RPI-CNC
 
 cd Protoneer-RPI-CNC/scripts/
 ./000-UpdateClean.sh
