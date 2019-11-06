@@ -6,11 +6,11 @@ Scripts used to setup a Raspberry Pi for use with the Raspberry Pi CNC board
 * edit "sudo nano /boot/cmdline.txt" remove "Console" settings. (Stops the logging of system messages to the serial port)
 
 * SSH to  RPI,  "sudo raspi-config":
-	*Expand FS first with
-	*Change Timezone
-	*Change Hostname
-	*Change Boot Option: Boot to CLI (No GUI)
-	*Reboot
+	Expand FS first with
+	Change Timezone
+	Change Hostname
+	Change Boot Option: Boot to CLI (No GUI)
+	Reboot
 
 * SSH to  RPI
 
