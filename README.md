@@ -52,6 +52,7 @@ bash ./005-freeSpace.sh
 bash ./006-RPi3-Serial-Config.sh
 
 SAMBA installeren
+watch map maken in home/pi/
 .cncr config file maken
 
 
