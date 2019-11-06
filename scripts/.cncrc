@@ -1,0 +1,46 @@
+{
+    "ports": [
+        {
+            "comName": "/dev/ttyAMA0",
+            "manufacturer": ""
+        }
+    ],
+    "baudrates": [
+        115200,
+        250000
+    ],
+    "watchDirectory": "/home/pi/watch",
+    "accessTokenLifetime": "30d",
+    "allowRemoteAccess": false,
+    "controller": "",
+    "state": {
+        "checkForUpdates": true,
+        "controller": {
+            "exception": {
+                "ignoreErrors": false
+            }
+        }
+    },
+    "commands": [
+        {
+            "title": "Update (root user)",
+            "commands": "sudo npm install -g cncjs@latest --unsafe-perm; pkill -a -f cncjs"
+        },
+        {
+            "title": "Update (non-root user)",
+            "commands": "npm install -g cncjs@latest; pkill -a -f cncjs"
+        },
+        {
+            "title": "Reboot",
+            "commands": "sudo /sbin/reboot"
+        },
+        {
+            "title": "Shutdown",
+            "commands": "sudo /sbin/shutdown"
+        }
+    ],
+    "events": [],
+    "macros": [],
+    "users": [],
+}
+
