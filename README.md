@@ -3,15 +3,20 @@ Scripts used to setup a Raspberry Pi for use with the Raspberry Pi CNC board
 
 * Get latest rpi image and copy to SD card with Balena etcher (https://www.raspberrypi.org/downloads/raspbian/)
 
-Add SSH and WPA supplicant file
-https://learn.adafruit.com/adafruits-raspberry-pi-lesson-3-network-setup/setting-up-wifi-with-occidentalis
+* Get latsest GRBL Firmware for Atmega 328 (If using RPI shield Protoneer) and place in Protoneer-RPI-CNC/Resources/Firmware on Github as grbl_latest.hex
 
+* Add SSH and WPA supplicant file to boot on SD-card
+
+* Boot Pi and find Ip Adress
+
+* SSH to  RPI
+ 
 * edit "sudo nano /boot/cmdline.txt" remove "Console" settings. (Stops the logging of system messages to the serial port)
 
-* SSH to  RPI,  "sudo raspi-config":
+* sudo raspi-config
 	* Expand FS
 	* Change Timezone
-	* Change Wifi Country
+	* Change Wifi Country  (If not doen with WPA 
 	* Change Hostname
 	* Change Boot Option: Boot to CLI (No GUI)
 	* Change Wifi Settings
@@ -20,65 +25,94 @@ https://learn.adafruit.com/adafruits-raspberry-pi-lesson-3-network-setup/setting
 * SSH to  RPI
 
 ```
-cd ~
-git clone https://github.com//Flupke1979/Protoneer-RPI-CNC
 
-cd Protoneer-RPI-CNC/scripts/
-bash ./000-UpdateClean.sh
+#Get files from Github
+	cd ~
+	git clone https://github.com//Flupke1979/Protoneer-RPI-CNC
 
+#Update OS and clean
+	cd Protoneer-RPI-CNC/scripts/
+	bash ./000-UpdateClean.sh
 #reboots
+
 #SSH to Pi
-
-cd Protoneer-RPI-CNC/scripts/
-bash ./001-GeneralSetup.sh
-
+#Install NodeJs
+	cd Protoneer-RPI-CNC/scripts/
+	bash ./001-install-node.sh
 #reboots
+
 #SSH to Pi
-
-cd Protoneer-RPI-CNC/scripts/
-bash ./002-install-node.sh
-
-Proberen: npm i npm@latest -g
-
+#Update nmp
+	npm i npm@latest -g
+	sudo reboot
 #reboots
+
 #SSH to Pi
-
-cd Protoneer-RPI-CNC/scripts/
-#Arduino enkel voor flashen
-bash ./003-install-Arduino.sh
-#AVRDude files aanpassen autoreset in Arduino map/...
-bash ./004-install-cncjs.sh
-bash ./005-freeSpace.sh
-bash ./006-RPi3-Serial-Config.sh
-
-SAMBA installeren
-watch map maken in home/pi/
-.cncr config file maken in home/pi/met:
-sudo nano ~/.cncrc
-Fileinhoud in bijstaande file
-git clone shopfloor
-
-
+	cd Protoneer-RPI-CNC/scripts/
+#Install cncjs
+	bash ./002-install-cncjs.sh
+#Clean
+	bash ./003-freeSpace.sh
+#Set RPI3 serial settings
+	bash ./004-RPi3-Serial-Config.sh
 #reboots
+
 #SSH to Pi
+#Create watch folder
+	mkdir watch
 
-#To test
-#cd Protoneer-RPI-CNC/scripts/
-#bash ./007-Autostart-cncjs.sh     shopfloor nog integreren in start commando
-#bash ./008-Iptables.sh
-
-sudo reboot
-
+#Install SAMBA
+	sudo apt-get install samba samba-common-bin
+	sudo nano /etc/samba/smb.conf
+	#add to file
+		[watch]
+		comment = Watch folder for G-Codes
+		path = /home/pi/watch
+		writeable = Yes
+		only guest = No
+		create mask = 0777
+		directory mask = 0777
+		browseable = Yes
+		public = yes
+	#Save file
+	sudo service smbd restart
+	sudo smbpasswd -a pi
+	sudo reboot
 #reboots
+
+#SSH to Pi	
+#Create cncjs config file
+	sudo nano ~/.cncrc
+	#Add content from .cncrc file
+
+#Add Shopfloor Tablet
+	git clone https://github.com/cncjs/cncjs-shopfloor-tablet
+
+#Autostart cncjs	
+	cd Protoneer-RPI-CNC/scripts/
+	bash ./005-Autostart-cncjs.sh     shopfloor nog integreren in start commando
+
+#Change Firewall rules
+	bash ./006-Iptables.sh
+	sudo reboot
+#reboots
+
 #SSH to Pi
+#Only when flashing Shield is necessary
+	cd Protoneer-RPI-CNC/scripts/
+	bash ./007-install-Arduino.sh
+	bash ./003-freeSpace.sh
+	
+#Change AVRDude files	
+	In AVRDude change avrdude-autoreset file to current Arduino version (With WinSCP)
 
-Flash starten vanuit resources/scripts map
-#cd Protoneer-RPI-CNC/scripts/
-#bash ./009-Flash-GRBL-V1.1H.sh
+#Flash Shield
+	cd Protoneer-RPI-CNC/resources/scripts
+	bash ./Run-Flash-GRBL-Latest.sh
 
-Power Off-On
 
-GRBL setting file laden
+#Power Off-On
 
-#sudo ./setup
+#Through cncjs load GRBL settings
+
 ```
