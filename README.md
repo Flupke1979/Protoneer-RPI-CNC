@@ -92,7 +92,7 @@ Scripts used to setup a Raspberry Pi for use with the Raspberry Pi CNC board
 
 #Autostart cncjs	
 	cd Protoneer-RPI-CNC/scripts/
-	bash ./005-Autostart-cncjs.sh     shopfloor nog integreren in start commando
+	bash ./005-Autostart-cncjs.sh
 
 #Change Firewall rules
 	bash ./006-Iptables.sh
