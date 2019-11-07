@@ -104,11 +104,9 @@ Scripts used to setup a Raspberry Pi for use with the Raspberry Pi CNC board
 	cd Protoneer-RPI-CNC/scripts/
 	bash ./007-install-Arduino.sh
 	bash ./003-freeSpace.sh
-	
-#Change AVRDude files	
-	In AVRDude change avrdude-autoreset file to current Arduino version (With WinSCP)
 
 #Flash Shield
+	cd ~
 	cd Protoneer-RPI-CNC/resources/scripts
 	bash ./Run-Flash-GRBL-Latest.sh
 
