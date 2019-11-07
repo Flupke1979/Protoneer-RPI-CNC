@@ -44,7 +44,7 @@ Scripts used to setup a Raspberry Pi for use with the Raspberry Pi CNC board
 #reboots
 
 #SSH to Pi
-#Update nmp
+#Update npm
 	npm i npm@latest -g
 	sudo reboot
 #reboots
