@@ -94,6 +94,10 @@ Scripts used to setup a Raspberry Pi for use with the Raspberry Pi CNC board
 	cd Protoneer-RPI-CNC/scripts/
 	bash ./005-Autostart-cncjs.sh
 
+#Create cncjs config file
+	sudo nano ~/.cncrc
+	#Add content from .cncrc file but use the newly created secret
+
 #Change Firewall rules
 	bash ./006-Iptables.sh
 	sudo reboot

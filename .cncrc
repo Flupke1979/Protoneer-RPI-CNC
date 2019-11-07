@@ -34,5 +34,6 @@
     "events": [],
     "macros": [],
     "users": [],
+	"secret": "$2a$10$fbdObjvrQ9YrGo0spXOiBe"
 }
 
