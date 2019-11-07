@@ -84,10 +84,6 @@ Scripts used to setup a Raspberry Pi for use with the Raspberry Pi CNC board
 #reboots
 
 #SSH to Pi	
-#Create cncjs config file
-	sudo nano ~/.cncrc
-	#Add content from .cncrc file
-
 #Add Shopfloor Tablet
 	git clone https://github.com/cncjs/cncjs-shopfloor-tablet
 
@@ -104,6 +100,7 @@ Scripts used to setup a Raspberry Pi for use with the Raspberry Pi CNC board
 	#Add content from .cncrc file but use the newly created secret
 
 #Change Firewall rules
+	cd Protoneer-RPI-CNC/scripts/
 	bash ./006-Iptables.sh
 	sudo reboot
 #reboots
