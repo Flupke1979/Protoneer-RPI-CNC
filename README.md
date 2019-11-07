@@ -91,8 +91,12 @@ Scripts used to setup a Raspberry Pi for use with the Raspberry Pi CNC board
 	git clone https://github.com/cncjs/cncjs-shopfloor-tablet
 
 #Autostart cncjs	
-	cd Protoneer-RPI-CNC/scripts/
-	bash ./005-Autostart-cncjs.sh
+	sudo npm install -g pm2
+	pm2 startup  # To start PM2 as pi / current user
+    #Copy the command as shown in the terminal and execute
+	pm2 start $(which cncjs) -- -m /tablet:/home/pi/cncjs-shopfloor-tablet/src
+	pm2 save
+	pm2 list
 
 #Create cncjs config file
 	sudo nano ~/.cncrc
