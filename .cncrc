@@ -12,7 +12,7 @@
     "watchDirectory": "/home/pi/watch",
     "accessTokenLifetime": "30d",
     "allowRemoteAccess": false,
-    "controller": "",
+    "controller": "Grbl",
     "state": {
         "checkForUpdates": true,
         "controller": {
