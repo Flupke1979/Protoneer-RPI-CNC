@@ -3,6 +3,8 @@ Scripts used to setup a Raspberry Pi for use with the Raspberry Pi CNC board
 
 * Get latest rpi image and copy to SD card with Balena etcher (https://www.raspberrypi.org/downloads/raspbian/)
 
+	If lite install git after startup  https://www.atlassian.com/git/tutorials/install-git#linux
+
 * Get latsest GRBL Firmware for Atmega 328 (If using RPI shield Protoneer) and place in Protoneer-RPI-CNC/Resources/Firmware on Github as grbl_latest.hex
 
 * Add SSH and WPA supplicant file to boot on SD-card
@@ -42,8 +44,8 @@ Scripts used to setup a Raspberry Pi for use with the Raspberry Pi CNC board
 #reboots
 
 #SSH to Pi
-#Update nmp
-	npm i npm@latest -g
+#Update npm
+	sudo npm i npm@latest -g
 	sudo reboot
 #reboots
 
@@ -90,7 +92,7 @@ Scripts used to setup a Raspberry Pi for use with the Raspberry Pi CNC board
 
 #Autostart cncjs	
 	cd Protoneer-RPI-CNC/scripts/
-	bash ./005-Autostart-cncjs.sh     shopfloor nog integreren in start commando
+	bash ./005-Autostart-cncjs.sh
 
 #Change Firewall rules
 	bash ./006-Iptables.sh
@@ -102,11 +104,9 @@ Scripts used to setup a Raspberry Pi for use with the Raspberry Pi CNC board
 	cd Protoneer-RPI-CNC/scripts/
 	bash ./007-install-Arduino.sh
 	bash ./003-freeSpace.sh
-	
-#Change AVRDude files	
-	In AVRDude change avrdude-autoreset file to current Arduino version (With WinSCP)
 
 #Flash Shield
+	cd ~
 	cd Protoneer-RPI-CNC/resources/scripts
 	bash ./Run-Flash-GRBL-Latest.sh
 
