@@ -3,8 +3,6 @@ Scripts used to setup a Raspberry Pi for use with the Raspberry Pi CNC board
 
 * Get latest rpi image and copy to SD card with Balena etcher (https://www.raspberrypi.org/downloads/raspbian/)
 
-	If lite install git after startup  https://www.atlassian.com/git/tutorials/install-git#linux
-
 * Get latsest GRBL Firmware for Atmega 328 (If using RPI shield Protoneer) and place in Protoneer-RPI-CNC/Resources/Firmware on Github as grbl_latest.hex
 
 * Add SSH and WPA supplicant file to boot on SD-card
@@ -31,6 +29,9 @@ Scripts used to setup a Raspberry Pi for use with the Raspberry Pi CNC board
 #Get files from Github
 	cd ~
 	git clone https://github.com//Flupke1979/Protoneer-RPI-CNC
+	#If git is not installed (Lite version Raspbian):
+		sudo apt-get update
+		sudo apt-get install git
 
 #Update OS and clean
 	cd Protoneer-RPI-CNC/scripts/
