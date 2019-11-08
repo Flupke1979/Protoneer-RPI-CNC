@@ -2,7 +2,7 @@
     "ports": [
         {
             "comName": "/dev/ttyAMA0",
-            "manufacturer": ""
+            "manufacturer": "RSCNC"
         }
     ],
     "baudrates": [
@@ -28,12 +28,61 @@
         },
         {
             "title": "Shutdown",
-            "commands": "sudo /sbin/shutdown"
+            "commands": "sudo /sbin/shutdown -h now"
         }
     ],
     "events": [],
-    "macros": [],
+    "macros": [
+        {
+            "id": "dfe3e78a-79c3-4cfd-8672-abb6a5c08320",
+            "mtime": 1541180156778,
+            "name": "GCode Boundary",
+            "content": "; Traverse around the boundary\nG90\nG0 Z10 ; go to z-safe\nG0 X[xmin] Y[ymin]\nG0 X[xmax]\nG0 Y[ymax]\nG0 X[xmin]\nG0 Y[ymin]"
+        }
+	],
     "users": [],
-	"secret": "$2a$10$fbdObjvrQ9YrGo0spXOiBe"
+    "mdi": [
+        {
+            "id": "a518a497-3548-4a6f-a972-160c6ffaa9aa",
+            "name": "Left Front",
+            "command": "G53 G0 Z0\nG53 G0 X-486 Y-576",
+            "grid": {
+                "xs": 6
+            }
+        },
+        {
+            "id": "34822386-3062-4846-8576-d92542be0cd0",
+            "name": "Machine to 0",
+            "command": "G53 G0 Z0\nG53 G0 X0 Y0",
+            "grid": {
+                "xs": 6
+            }
+        },
+        {
+            "id": "4f79e8ae-dafe-4e0f-aa04-60dbdf0f7ee3",
+            "name": "Erase WCS",
+            "command": "$RST=#",
+            "grid": {
+                "xs": 6
+            }
+        },
+        {
+            "id": "4a01207d-02de-4b6e-9674-c4136b6ad3d1",
+            "name": "Z HOME",
+            "command": "G53 G0 Z0",
+            "grid": {
+                "xs": 6
+            }
+        },
+        {
+            "id": "ca84374e-9474-41d7-b8df-af56ec978d4f",
+            "name": "Probe Position",
+            "command": "G0 X50 Y50",
+            "grid": {
+                "xs": 6
+            }
+        }
+    ],
+	"secret": "$2a$10$3M.w8XpmOXqEFRqBIxaK6u"
 }
 
